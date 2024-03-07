@@ -1,19 +1,16 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 
 	// Atributos / Caracteristicas
-
-	// Encapsulamento: Encapsular/Proteger algo
-	// Private / Protected / Public / Friendly
-
 	private int numero;
 	private int agencia;
 	private int tipo;
 	private String titular;
 	private float saldo;
 
-	// Método Construtor => que auxilia na criação/instanciação de um Objeto da Classe
+	// Método Construtor => que auxilia na criação/instanciação de um Objeto da
+	// Classe
 	public Conta(int numeroConta, int agencia, int tipo, String titular, float saldo) {
 		// this(Esta): representa o nome da própria Classe (Conta)
 		numero = numeroConta;
@@ -22,18 +19,14 @@ public class Conta {
 		this.titular = titular;
 		this.saldo = saldo;
 	}
-	
+
 	// Exemplo de Método de Sobrecarga
 	/*
-	public Conta(int agencia, int tipo, String titular, float saldo) {
-		this.numero = +1;
-		this.agencia = agencia; 
-		this.tipo = tipo;
-		this.titular = titular;
-		this.saldo = saldo;
-	}*/
-	
-	
+	 * public Conta(int agencia, int tipo, String titular, float saldo) {
+	 * this.numero = +1; this.agencia = agencia; this.tipo = tipo; this.titular =
+	 * titular; this.saldo = saldo; }
+	 */
+
 	// Métodos de Acesso (Método Get/Getter - Método Set/Setter)
 	public int getNumero() {
 		return numero;
@@ -86,7 +79,7 @@ public class Conta {
 		this.setSaldo(this.getSaldo() - valor);
 		return true;
 	}
-
+	
 	public void depositar(float valor) {
 		this.setSaldo(this.getSaldo() + valor);
 	}
@@ -113,5 +106,5 @@ public class Conta {
 		System.out.println("Saldo: " + this.saldo);
 
 	}
-
+	
 }

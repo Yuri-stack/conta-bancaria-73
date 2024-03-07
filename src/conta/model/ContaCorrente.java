@@ -3,11 +3,14 @@ package conta.model;
 // ContaCorrente herda de Conta
 public class ContaCorrente extends Conta {
 
+	// Atributos
 	private float limite;
 
+	// Método Construtor
 	public ContaCorrente(int numeroConta, int agencia, int tipo, String titular, float saldo, float limite) {
 
-		// super() == Método Const. da Super Classe | Ex.: Conta(numeroConta, agencia, tipo, titular, saldo)
+		// super() == Método Const. da Super Classe
+		// Ex.: Conta(numeroConta, agencia, tipo, titular, saldo)
 		super(numeroConta, agencia, tipo, titular, saldo);
 
 		// Atributo da Classe ContaCorrente
@@ -24,7 +27,18 @@ public class ContaCorrente extends Conta {
 	}
 
 	// Métodos Especificos da Classe ContaCorrente
-	
+
+	@Override // Override = Sobrescrever
+	public boolean sacar(float valor) {
+		if (this.getSaldo() + this.getLimite() < valor) {
+			System.out.println("\n Saldo Insuficiente!");
+			return false;
+		}
+
+		this.setSaldo(this.getSaldo() - valor);
+		return true;
+	}
+
 	@Override // Override = Sobrescrever
 	public void visualizar() {
 		// palavra super. == chamada da Cuperclasse | Ex.: Conta.visualizar();
