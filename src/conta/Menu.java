@@ -3,20 +3,19 @@ package conta;
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
 import conta.util.Cores;
 
 public class Menu {
 	public static void main(String[] args) {
 		
+		// Superclasse Conta
 		Conta c1 = new Conta(123456, 123, 1, "Maria dos Santos", 2500.0f);
+		c1.visualizar();
 		
-		System.out.println("Nome do Titular: " + c1.getTitular());
-		System.out.println("Saldo da Conta: " + c1.getSaldo());
-		System.out.println();
-		
-		c1.setSaldo(10000.0f);
-		System.out.println("Saldo da Conta: " + c1.getSaldo());
-		
+		// Classe Filha de Conta - Mesmas caracteristicas da Conta, mas add novos Métodos e Atributos 
+		ContaCorrente cc1 = new ContaCorrente(123457, 123, 1, "João dos Santos", 2500.0f, 1000f);
+		cc1.visualizar();
 
 		Scanner leia = new Scanner(System.in);
 		
